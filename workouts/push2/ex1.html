@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bent-Over Cable Fly</title>
+</head>
+<body>
+    <h1>Bent-Over Cable Fly</h1>
+    <video autoplay loop muted>
+        <source src="/videos/bent_over_cable_flye.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <p>Previous best: <span id="previous-best"></span></p>
+    <form id="form">
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" name="weight" required><br><br>
+        <label for="sets">Sets:</label>
+        <input type="number" id="sets" name="sets" required><br><br>
+        <label for="reps">Reps:</label>
+        <input type="number" id="reps" name="reps" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        ex_name = "bent_over_cable_fly";
+        next = '/workouts/push2/ex2';
+    </script>
+    <script src="/ex.js"></script>
+</body>
+</html>
