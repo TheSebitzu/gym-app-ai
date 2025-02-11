@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const previousSets = localStorage.getItem(`${ex_name}_sets`) || 0;
     const previousReps = localStorage.getItem(`${ex_name}_reps`) || 0;
     document.getElementById('previous-best').textContent = `${previousKg} kg, ${previousSets} sets, and ${previousReps} reps`;
+
+    document.getElementById('weight').value = previousKg || 0;
+    document.getElementById('sets').value = previousSets || 0;
+    document.getElementById('reps').value = previousReps || 0;
 });
 
 document.getElementById('form').addEventListener('submit', function(event) {
