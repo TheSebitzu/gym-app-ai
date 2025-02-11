@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/workouts.css">
 </head>
 <body>
+    <h1>Have a great time</h1>
     <p>Previous best: <span id="previous-best"></span></p>
 
     <form id="form">
@@ -19,13 +20,13 @@
         <input type="submit" value="Submit">
     </form>
 
-    <button onclick="window.location.href='/HTMLs/start_warmup.html'">Back</button>
+    <button onclick="window.location.href='/HTMLs/start_warmup.html'" class="back">Back</button>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const previousKm = localStorage.getItem('run_km') || 0;
             const previousMin = localStorage.getItem('run_min') || 0;
-            document.getElementById('previous-best').textContent = `${previousKm} kilometri si ${previousMin} minute `;
+            document.getElementById('previous-best').textContent = `${previousKm} kilometers and ${previousMin} minutes `;
         });
 
         document.getElementById('form').addEventListener('submit', function(event){
