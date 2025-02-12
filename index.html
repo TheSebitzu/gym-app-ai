@@ -11,18 +11,6 @@
     <button onclick="location.href='/gym-app-ai/HTMLs/start_warmup.html'">Start</button>
     <button onclick="location.href='/gym-app-ai/HTMLs/settings.html'">Settings</button>
 
-    <script>
-        // Clear skipped exercises when loading the index page
-        localStorage.removeItem('skippedExercises');
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/gym-app-ai/common/sw.js').then(function(registration) {
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, function(error) {
-                    console.log('ServiceWorker registration failed: ', error);
-                });
-            });
-        }
-    </script>
+    <script src="/gym-app-ai/common/index.js"></script>
 </body>
 </html>
