@@ -20,13 +20,22 @@ document.getElementById('form').addEventListener('submit', function(event) {
     const sets = document.getElementById('sets').value;
     const reps = document.getElementById('reps').value;
     
+    let skippedExercises = JSON.parse(localStorage.getItem('skippedExercises')) || [];
+
+    // Remove the current exercise from skippedExercises if it exists
+    const currentExercise = `ex${ex_num}`;
+    const index = skippedExercises.indexOf(currentExercise);
+    if (index > -1) {
+        skippedExercises.splice(index, 1);
+        localStorage.setItem('skippedExercises', JSON.stringify(skippedExercises));
+    }
+
     if (event.submitter.id === 'skip-button') {
         if (typeof last !== 'undefined' && last) {
             alert("This is the last exercise. You cannot skip it.");
             return;
         }
-        let skippedExercises = JSON.parse(localStorage.getItem('skippedExercises')) || [];
-        skippedExercises.push(`ex${ex_num}`);
+        skippedExercises.push(currentExercise);
         localStorage.setItem('skippedExercises', JSON.stringify(skippedExercises));
         window.location.href = next;
         return;
@@ -47,25 +56,23 @@ document.getElementById('form').addEventListener('submit', function(event) {
     }
 
     // Check for skipped exercises after form submission
-    let skippedExercises = JSON.parse(localStorage.getItem('skippedExercises')) || [];
-    
-    const index = skippedExercises.indexOf(`ex${ex_num}`);
-    if (index > -1) {
-        skippedExercises.splice(index, 1);
-        localStorage.setItem('skippedExercises', JSON.stringify(skippedExercises));
-    }
-
-    skippedExercises = JSON.parse(localStorage.getItem('skippedExercises')) || [];
-    
     if (skippedExercises.length > 0) {
-        let retry = confirm("You have skipped exercises. Do you want to complete them now?");
-        
-        if (retry) {
+        // Show custom modal dialog
+        const modal = document.getElementById('myModal');
+        modal.style.display = 'block';
+
+        document.getElementById('modal-yes').onclick = function() {
             let nextSkippedExercise = skippedExercises.shift();
             localStorage.setItem('skippedExercises', JSON.stringify(skippedExercises));
             window.location.href = `/gym-app-ai/workouts/${ex_type}/${nextSkippedExercise}.html`;
-            return;
-        }
+        };
+
+        document.getElementById('modal-no').onclick = function() {
+            modal.style.display = 'none';
+            window.location.href = `${next}`;
+        };
+
+        return;
     }
 
     window.location.href = `${next}`;
