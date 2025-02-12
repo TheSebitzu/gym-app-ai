@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <include src="/gym-app-ai/common/header.html"></include>
+    <script>
+        // Function to load header content
+        function loadHeader() {
+            fetch('/gym-app-ai/common/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.head.innerHTML += data;
+                });
+        }
+        // Call the function on window load
+        window.onload = loadHeader;
+    </script>
     <title>DB Pullover + Stretch</title>
 </head>
 <body>
