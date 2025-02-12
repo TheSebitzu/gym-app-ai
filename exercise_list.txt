@@ -51,3 +51,5 @@ cable_bar_reverse_grip_pushdown
 machine_lateral_raise
 plate_front_raise
 incline_bench_press
+cable_lateral_raise
+hammer_grip_preacher_curl
