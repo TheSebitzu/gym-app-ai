@@ -63,7 +63,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
         if (retry) {
             let nextSkippedExercise = skippedExercises.shift();
             localStorage.setItem('skippedExercises', JSON.stringify(skippedExercises));
-            window.location.href = `/workouts/${ex_type}/${nextSkippedExercise}.html`;
+            window.location.href = `/gym-app-ai/workouts/${ex_type}/${nextSkippedExercise}.html`;
             return;
         }
     }
