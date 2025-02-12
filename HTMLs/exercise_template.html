@@ -9,7 +9,7 @@
 <body>
     <h1>{exercise name}</h1>
     <video autoplay loop muted>
-        <source src="/videos/incline_bench_press.mp4" type="video/mp4">
+        <source src="/videos/{exercise name in snake case}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <p>Previous best: <span id="previous-best"></span></p>
@@ -21,10 +21,14 @@
         <label for="reps">Reps:</label>
         <input type="number" id="reps" name="reps" required><br><br>
         <input type="submit" value="Submit">
+        <input type="submit" id="skip-button" value="Skip">
     </form>
     <script>
-        ex_name = "{exercise name with _s}";
-        next = '{path to next file}';
+        ex_name = "{exercise name in snake case}";
+        next = '{path to next exercise}';
+        ex_num = "{number of exercise (same as in file name)}";
+        ex_type = "{type of exercise (same as in folder name)}";
+        // Add last = true; if this is the last exercise
     </script>
     <script src="/ex.js"></script>
 </body>
