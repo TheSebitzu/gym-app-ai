@@ -56,9 +56,9 @@ document.getElementById('form').addEventListener('submit', function(event) {
     }
 
     // Check for skipped exercises after form submission
+    const modal = document.getElementById('myModal');
     if (skippedExercises.length > 0) {
         // Show custom modal dialog
-        const modal = document.getElementById('myModal');
         modal.style.display = 'block';
 
         document.getElementById('modal-yes').onclick = function() {
@@ -73,6 +73,10 @@ document.getElementById('form').addEventListener('submit', function(event) {
         };
 
         return;
+    }
+    else
+    {
+        modal.style.display = 'none';
     }
 
     window.location.href = `${next}`;
