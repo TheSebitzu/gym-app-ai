@@ -1,5 +1,7 @@
 # Gym app (made using AI)
 
-The app uses a service worker but i will not cache any files as I just want to add the site to my homescreen (so the service worker will be minimal).
+Tried to change the prompt but it didnt work as expected so i reverted.
+
+This is the release and I dont think I will change anything except exercises.
 
 Made for PRIVATE use
