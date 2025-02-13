@@ -2,7 +2,7 @@
 
 // variabila next o sa fie unde trimitem cand apasam submit
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const previousKg = localStorage.getItem(`${ex_name}_kg`) || 0;
     const previousSets = localStorage.getItem(`${ex_name}_sets`) || 0;
     const previousReps = localStorage.getItem(`${ex_name}_reps`) || 0;
@@ -13,13 +13,13 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('reps').value = previousReps || 0;
 });
 
-document.getElementById('form').addEventListener('submit', function(event) {
+document.getElementById('form').addEventListener('submit', function (event) {
     event.preventDefault();
-    
+
     const kg = document.getElementById('weight').value;
     const sets = document.getElementById('sets').value;
     const reps = document.getElementById('reps').value;
-    
+
     let skippedExercises = JSON.parse(localStorage.getItem('skippedExercises')) || [];
 
     // Remove the current exercise from skippedExercises if it exists
@@ -55,27 +55,28 @@ document.getElementById('form').addEventListener('submit', function(event) {
         localStorage.setItem(`${ex_name}_reps`, reps);
     }
 
+    skippedExercises = JSON.parse(localStorage.getItem('skippedExercises')) || [];
+
     // Check for skipped exercises after form submission
     const modal = document.getElementById('myModal');
     if (skippedExercises.length > 0) {
         // Show custom modal dialog
         modal.style.display = 'block';
 
-        document.getElementById('modal-yes').onclick = function() {
+        document.getElementById('modal-yes').onclick = function () {
             let nextSkippedExercise = skippedExercises.shift();
             localStorage.setItem('skippedExercises', JSON.stringify(skippedExercises));
             window.location.href = `/gym-app-ai/workouts/${ex_type}/${nextSkippedExercise}.html`;
         };
 
-        document.getElementById('modal-no').onclick = function() {
+        document.getElementById('modal-no').onclick = function () {
             modal.style.display = 'none';
             window.location.href = `${next}`;
         };
 
         return;
     }
-    else
-    {
+    else {
         modal.style.display = 'none';
     }
 

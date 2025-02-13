@@ -1,7 +1,7 @@
 // service-worker.js
 
 // Cache version
-const CACHE_NAME = 'test-v22';
+const CACHE_NAME = 'test-v23';
 
 // Files to cache
 const CACHE_ASSETS = [
