@@ -2,6 +2,6 @@
 
 Tried to change the prompt but it didnt work as expected so i reverted.
 
-This is the release and I dont think I will change anything except exercises.
+This is the release and I dont think I will change anything MAJOR except exercises.
 
 Made for PRIVATE use
