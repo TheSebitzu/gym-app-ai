@@ -10,28 +10,31 @@
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
     padding-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centers modal content */
 }
 
 .modal-content {
-    background-color: #1e1e1e; /* Match background of form */
-    border-radius: 16px; /* Match the form styling */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Match the form box shadow */
+    background-color: #1e1e1e;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin: 5% auto;
-    padding: 20px;
+    padding: 30px; /* Increase padding for more spacing */
     width: 70%;
     max-width: 600px;
-    color: #e0e0e0; /* Matching text color */
+    color: #e0e0e0;
+    text-align: center; /* Center text inside the modal */
 }
 
 .modal-header {
-    font-size: 1.5em;
+    font-size: 2em; /* Larger header text */
     color: #8A2BE2;
-    margin-bottom: 1rem;
-    text-align: center;
+    margin-bottom: 1.5rem; /* Increase space below header */
 }
 
 .modal-body {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem; /* Increase space below body content */
 }
 
 .modal-footer {
@@ -39,12 +42,12 @@
 }
 
 .modal-button {
-    padding: 0.75rem;
+    padding: 1rem; /* Increase padding for larger button */
     background: #8A2BE2;
     color: #121212;
     border: none;
     border-radius: 12px;
-    font-size: 1.1em;
+    font-size: 1.3em; /* Make button text a bit larger */
     cursor: pointer;
     transition: background 0.3s ease;
     margin-top: 1rem;
@@ -59,13 +62,14 @@
 @media (max-width: 600px) {
     .modal-content {
         width: 90%;
-        padding: 1rem;
+        padding: 1.5rem;
     }
 
     .modal-button {
-        font-size: 1em;
+        font-size: 1.2em; /* Adjust font size for mobile */
     }
 }
+
 
 /* Body Styles */
 body {
