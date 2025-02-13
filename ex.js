@@ -78,4 +78,8 @@ document.getElementById('form').addEventListener('submit', function(event) {
     window.location.href = `${next}`;
 });
 
+if (!localStorage.getItem('skippedExercises')) {
+    localStorage.setItem('skippedExercises', JSON.stringify([]));
+}
+
 console.log(localStorage.skippedExercises);
