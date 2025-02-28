@@ -1,3 +1,6 @@
+// ALWAYS CHANGE THE CONTENT OF THIS PAGE WHEN YOU CHANGE ex.js
+// EXCEPT THE MARKED LINE
+
 // For every exercise we will have a var_name that will contain the name of the exercise
 
 // The "next" variable will be the page we send to
@@ -32,7 +35,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
         return;
     }
 
-    if (kg > localStorage.getItem(`${ex_name}_kg`)) {
+    if (kg < localStorage.getItem(`${ex_name}_kg`)) { // YOU NEED TO CHANGE THIS
         localStorage.setItem(`${ex_name}_kg`, kg);
         localStorage.setItem(`${ex_name}_sets`, sets);
         localStorage.setItem(`${ex_name}_reps`, reps);
