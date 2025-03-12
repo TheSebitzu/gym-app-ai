@@ -53,3 +53,4 @@ plate_front_raise
 incline_bench_press
 cable_lateral_raise
 hammer_grip_preacher_curl
+meadows_row
