@@ -90,7 +90,11 @@ button:hover {
 }
 
 .highlighted {
-    background-color: red;
+    background-color: #7B1FA2;
+}
+
+.highlighted:hover {
+    background-color: #6A1A8A;
 }
 
 /* Adjusting layout for body when video is present */
