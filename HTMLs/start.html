@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
     <link rel="stylesheet" href="/gym-app-ai/common/workouts.css">
     <link rel="manifest" href="/gym-app-ai/common/manifest.json">
     <title>Gym Exercises</title>
 </head>
+
 <body>
     <button onclick="changeExercise(1)" id="btn1">Push1</button>
     <button onclick="changeExercise(2)" id="btn2">Pull1</button>
@@ -19,28 +21,28 @@
         // Function to change the 'nextEx' value and reload the page
         function changeExercise(exerciseNumber) {
             localStorage.setItem('nextEx', (exerciseNumber % 6) + 1);
-            
-            switch(exerciseNumber) {
-                case 1: 
-                    location.href='/gym-app-ai/workouts/push1/ex1.html';
+
+            switch (exerciseNumber) {
+                case 1:
+                    location.href = '/gym-app-ai/workouts/push1/ex1.html';
                     break;
                 case 2:
-                    location.href='/gym-app-ai/workouts/pull1/ex1.html';
+                    location.href = '/gym-app-ai/workouts/pull1/ex1.html';
                     break;
                 case 3:
-                    location.href='/gym-app-ai/workouts/legs1/ex1.html';
+                    location.href = '/gym-app-ai/workouts/legs1/ex1.html';
                     break;
                 case 4:
-                    location.href='/gym-app-ai/workouts/push2/ex1.html';
+                    location.href = '/gym-app-ai/workouts/push2/ex1.html';
                     break;
                 case 5:
-                    location.href='/gym-app-ai/workouts/pull2/ex1.html';
+                    location.href = '/gym-app-ai/workouts/pull2/ex1.html';
                     break;
                 case 6:
-                    location.href='/gym-app-ai/workouts/legs2/ex1.html';
+                    location.href = '/gym-app-ai/workouts/legs2/ex1.html';
                     break;
                 default:
-                    location.href='/gym-app-ai/workouts/push1/ex1.html';
+                    location.href = '/gym-app-ai/workouts/push1/ex1.html';
             }
         }
 
@@ -51,6 +53,10 @@
             let button = document.getElementById(buttonId);
             if (button) {
                 button.classList.add('highlighted'); // Add 'highlighted' class to the button
+                console.log('Highlighted button:', buttonId);
+            }
+            else {
+                console.log('Button not found:', buttonId);
             }
         }
 
@@ -58,4 +64,5 @@
         window.onload = highlightButton;
     </script>
 </body>
+
 </html>
