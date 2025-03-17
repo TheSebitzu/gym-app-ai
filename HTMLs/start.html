@@ -8,12 +8,54 @@
     <title>Gym Exercises</title>
 </head>
 <body>
-    <button onclick="location.href='/gym-app-ai/workouts/push1/ex1.html'">Push1 (Monday)</button>
-    <button onclick="location.href='/gym-app-ai/workouts/pull1/ex1.html'">Pull1 (Tuesday)</button>
-    <button onclick="location.href='/gym-app-ai/workouts/legs1/ex1.html'">Legs1 (Wednesday)</button>
-    <button onclick="location.href='/gym-app-ai/workouts/push2/ex1.html'">Push2 (Thursday)</button>
-    <button onclick="location.href='/gym-app-ai/workouts/pull2/ex1.html'">Pull2 (Friday)</button>
-    <button onclick="location.href='/gym-app-ai/workouts/legs2/ex1.html'">Legs2 (Saturday)</button>
-    <button onclick="location.href='/gym-app-ai/HTMLs/running.html'">Running (Sunday)</button>
+    <button onclick="changeExercise(1)" id="btn1">Push1</button>
+    <button onclick="changeExercise(2)" id="btn2">Pull1</button>
+    <button onclick="changeExercise(3)" id="btn3">Legs1</button>
+    <button onclick="changeExercise(4)" id="btn4">Push2</button>
+    <button onclick="changeExercise(5)" id="btn5">Pull2</button>
+    <button onclick="changeExercise(6)" id="btn6">Legs2</button>
+
+    <script>
+        // Function to change the 'nextEx' value and reload the page
+        function changeExercise(exerciseNumber) {
+            localStorage.setItem('nextEx', (exerciseNumber % 6) + 1);
+            
+            switch(exerciseNumber) {
+                case 1: 
+                    location.href='/gym-app-ai/workouts/push1/ex1.html';
+                    break;
+                case 2:
+                    location.href='/gym-app-ai/workouts/pull1/ex1.html';
+                    break;
+                case 3:
+                    location.href='/gym-app-ai/workouts/legs1/ex1.html';
+                    break;
+                case 4:
+                    location.href='/gym-app-ai/workouts/push2/ex1.html';
+                    break;
+                case 5:
+                    location.href='/gym-app-ai/workouts/pull2/ex1.html';
+                    break;
+                case 6:
+                    location.href='/gym-app-ai/workouts/legs2/ex1.html';
+                    break;
+                default:
+                    location.href='/gym-app-ai/workouts/push1/ex1.html';
+            }
+        }
+
+        // Function to highlight the button based on nextEx value
+        function highlightButton() {
+            let nextEx = parseInt(localStorage.getItem('nextEx')) || 1; // Get nextEx from localStorage
+            let buttonId = 'btn' + nextEx; // Construct the button ID based on nextEx
+            let button = document.getElementById(buttonId);
+            if (button) {
+                button.classList.add('highlighted'); // Add 'highlighted' class to the button
+            }
+        }
+
+        // Call the function to highlight the correct button when the page loads
+        window.onload = highlightButton;
+    </script>
 </body>
 </html>

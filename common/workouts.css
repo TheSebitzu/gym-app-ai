@@ -89,6 +89,10 @@ button:hover {
     background-color: #7B1FA2;
 }
 
+.highlighted {
+    background-color: #5D199C;
+}
+
 /* Adjusting layout for body when video is present */
 body:has(video) {
     display: flex;
